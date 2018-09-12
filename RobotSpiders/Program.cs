@@ -32,7 +32,7 @@ namespace RobotSpiders
                     {
                         var res = robotSpider.RobotSpiderState.Move(robotSpider.FieldX,robotSpider.FieldY);
 
-                        Console.WriteLine($"Current position: {robotSpider.RobotSpiderState.CurrentX},{robotSpider.RobotSpiderState.CurrentY}");
+                        Console.WriteLine($"Current position: {robotSpider.RobotSpiderState.CurrentX},{robotSpider.RobotSpiderState.CurrentY} {robotSpider.RobotSpiderState.CurrentDirection.ToString()}");
 
                         if (!res)
                         {

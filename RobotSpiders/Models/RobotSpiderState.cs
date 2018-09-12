@@ -76,7 +76,7 @@ namespace RobotSpiders.Models
 
             this.CurrentDirection = dir == -1 ? Direction.Left : (Direction)dir;
 
-            Console.WriteLine($"Current Direction: {this.CurrentDirection.ToString()}");
+            Console.WriteLine($"Current direction: {this.CurrentDirection.ToString()}");
         }
 
         public bool Move(long limitX, long limitY)
