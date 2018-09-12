@@ -5,10 +5,10 @@ namespace RobotSpiders.Versions
 {
     public static class SingleInput
     {
-        public static Settings InputVals()
+        public static RobotSpider InputVals()
         {
             long sizeX, sizeY;
-            RobotSpider rs = new RobotSpider();
+            RobotSpiderState rs = new RobotSpiderState();
 
             Console.WriteLine("Type in the X size of the field");
             sizeX = InputLong();
@@ -19,17 +19,17 @@ namespace RobotSpiders.Versions
             Console.WriteLine();
 
             Console.WriteLine("Type in the X position value of the spider");
-            rs.CurrentX = InputLong(sizeX);
+            rs.StartingX = InputLong(sizeX);
             Console.WriteLine("Type in the Y position value of the spider");
-            rs.CurrentY = InputLong(sizeY);
+            rs.StartingY = InputLong(sizeY);
 
             Console.WriteLine("Type in the direction spider is facing (Up, Right, Down, Left)");
-            rs.CurrentDirection = InputDirection();
+            rs.StartingDirection = InputDirection();
 
-            Console.WriteLine($"spider: {rs.CurrentX} {rs.CurrentY} {rs.CurrentDirection}");
-            Console.ReadLine();
+            Console.WriteLine($"spider: {rs.StartingX} {rs.StartingY} {rs.StartingDirection}");
+            //Console.ReadLine();
 
-            return new Settings
+            return new RobotSpider
             {
                 FieldX = sizeX,
                 FieldY = sizeY,

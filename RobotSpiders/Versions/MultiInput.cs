@@ -8,10 +8,10 @@ namespace RobotSpiders.Versions
     public class MultiInput
     {
 
-        public Settings InputVals()
+        public RobotSpider InputVals()
         {
             long[] field = new long[2];
-            RobotSpider rs = new RobotSpider();
+            RobotSpiderState rs = new RobotSpiderState();
 
             Console.WriteLine("Type in size of the field in 'X Y' format");
             string x = Console.ReadLine();
@@ -47,7 +47,7 @@ namespace RobotSpiders.Versions
 
                 if (long.TryParse(tmpY[0], out long lngOu1) && lngOu1 > 0)
                 {
-                    rs.CurrentX = lngOu1;
+                    rs.StartingX = lngOu1;
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace RobotSpiders.Versions
 
                 if (long.TryParse(tmpY[1], out long lngOu2) && lngOu2 > 0)
                 {
-                    rs.CurrentY = lngOu2;
+                    rs.StartingY = lngOu2;
                 }
                 else
                 {
@@ -67,7 +67,7 @@ namespace RobotSpiders.Versions
 
             if (Enum.TryParse(tmpY[2].Trim(), out Direction dir))
             {
-                rs.CurrentDirection = dir;
+                rs.StartingDirection = dir;
             }
             else
             {
@@ -77,10 +77,10 @@ namespace RobotSpiders.Versions
             Console.WriteLine();
             Console.WriteLine($"size: {field[0]} {field[1]}");
             Console.WriteLine();
-            Console.WriteLine($"spider: {rs.CurrentX} {rs.CurrentY} {rs.CurrentDirection}");
+            Console.WriteLine($"spider: {rs.StartingX} {rs.StartingY} {rs.StartingDirection}");
             Console.ReadLine();
 
-            return new Settings
+            return new RobotSpider
             {
                 FieldX = field[0],
                 FieldY = field[1],

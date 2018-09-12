@@ -2,9 +2,9 @@
 {
     public class RobotSpider
     {
-        public long CurrentX { get; set; }
-        public long CurrentY { get; set; }
+        public long FieldX { get; set; }
+        public long FieldY { get; set; }
 
-        public Direction CurrentDirection { get; set; }
+        public RobotSpiderState RobotSpiderState { get; set; }
     }
 }
